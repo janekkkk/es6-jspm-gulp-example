@@ -24,7 +24,7 @@
   "license": "Unlicense",
   "scripts": {
     "preinstall": "npm install -g npm jspm gulp browser-sync",
-    "install": "jspm install",
+    "install": "jspm install && composer install",
     "test": "karma start",
     "test:watch": "karma start --no-single-run",
     "build": "gulp build",
