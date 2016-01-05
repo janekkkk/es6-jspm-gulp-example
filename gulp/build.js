@@ -48,7 +48,7 @@ gulp.task( 'buildjs', function()
                              {
                                var file = getFilenameFromPath( path );
                                gutil.log( "Building: " + path );
-                               exec( 'jspm bundle-sfx js/' + file + ' dist/' + file + '.min.js --minify --skip-source-maps' );
+                               exec( 'jspm bundle-sf1x js/' + file + ' dist/' + file + '.min.js --minify --skip-source-maps' );
                              } );
 } );
 

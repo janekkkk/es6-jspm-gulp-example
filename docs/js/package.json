@@ -1,28 +1,36 @@
 {
-  "name": "es6-jspm-gulp-boilerplate",
-  "version": "0.3.0",
+  "name": "es6-jspm-gulp-example",
+  "version": "0.3.1",
   "description": "Boilerplate for ES6+ apps using JSPM + Babel",
   "main": "dist/index.html",
-  "homepage": "https://github.com/alexweber/es6-jspm-gulp-boilerplate#readme",
+  "homepage": "https://github.com/janekkkk/es6-jspm-gulp-example#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexweber/es6-jspm-gulp-boilerplate.git"
+    "url": "git+https://github.com/janekkkk/es6-jspm-gulp-example.git"
   },
-  "bugs": "https://github.com/alexweber/es6-jspm-gulp-boilerplate/issues",
+  "bugs": "https://github.com/janekkkk/es6-jspm-gulp-example/issues",
   "author": {
     "name": "Alex Weber",
     "email": "alexweber15@gmail.com",
     "url": "http://alexweber.com.br"
   },
+  "contributors": [
+    {
+      "name": "Janek Ozga",
+      "email": "ikben@janekozga.nl"
+    }
+  ],
   "readmeFilename": "README.md",
   "license": "Unlicense",
   "scripts": {
+    "preinstall": "npm install -g npm jspm gulp browser-sync",
+    "install": "jspm install",
     "test": "karma start",
     "test:watch": "karma start --no-single-run",
     "build": "gulp build",
     "docs": "npm run sassdocs && npm run jsdocs",
     "start": "gulp",
-    "buildjs": "gulp build",
+    "buildjs": "gulp buildjs",
     "jsdocs": "esdoc -c .esdoc.json",
     "sassdocs": "sassdoc src/scss"
   },
@@ -31,6 +39,7 @@
     "jspm",
     "gulp",
     "boilerplate",
+    "example",
     "babel",
     "systemjs"
   ],
@@ -41,6 +50,7 @@
     "packages": "src/lib"
   },
   "devDependencies": {
+    "browser-sync": "^2.11.0",
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
     "del": "^1.2.0",
@@ -53,6 +63,7 @@
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.5.2",
     "gulp-connect": "^2.2.0",
+    "gulp-connect-php": "0.0.7",
     "gulp-eslint": "^1.0.0",
     "gulp-imagemin": "^2.2.1",
     "gulp-minify-css": "^1.1.6",
@@ -63,7 +74,7 @@
     "gulp-scss-lint": "^0.2.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.5",
+    "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^4.1.0",
     "jspm": "^0.16.19",
     "karma": "^0.12.36",
@@ -95,9 +106,5 @@
       "babel-runtime": "npm:babel-runtime@^5.8.24",
       "core-js": "npm:core-js@^1.1.4"
     }
-  },
-  "dependencies": {
-    "gulp-util": "^3.0.7",
-    "streamqueue": "^1.1.1"
   }
 }

@@ -1,7 +1,7 @@
 # ES6 + JSPM + Gulp Boilerplate
 
 > A boilerplate for developing ES6+ apps using JSPM & Gulp.
-> Some changes were made to the original repository to match my workflow
+> Some changes were made to the original repository to match my workflow.
 
 ## JSPM
 
@@ -40,9 +40,6 @@ Run `npm run docs` to generate documentation for your JavaScript and SASS automa
 
 Run `gulp build` or `npm run build` to build the app for distribution in the `dist` folder.
 
-## Contributing
-
-If you like this/find it useful/find a bug please open an [issue](https://github.com/janekkkk/es6-jspm-gulp-example/issues) and, better yet, submit a Pull Request! ☺ Any and all help appreciated, thanks!
 
 ---
 

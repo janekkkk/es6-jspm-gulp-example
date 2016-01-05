@@ -23,7 +23,7 @@
   "readmeFilename": "README.md",
   "license": "Unlicense",
   "scripts": {
-    "preinstall": "npm install -g npm jspm gulp",
+    "preinstall": "npm install -g npm jspm gulp browser-sync",
     "install": "jspm install",
     "test": "karma start",
     "test:watch": "karma start --no-single-run",
@@ -50,6 +50,7 @@
     "packages": "src/lib"
   },
   "devDependencies": {
+    "browser-sync": "^2.11.0",
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
     "del": "^1.2.0",
@@ -62,6 +63,7 @@
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.5.2",
     "gulp-connect": "^2.2.0",
+    "gulp-connect-php": "0.0.7",
     "gulp-eslint": "^1.0.0",
     "gulp-imagemin": "^2.2.1",
     "gulp-minify-css": "^1.1.6",
@@ -72,6 +74,7 @@
     "gulp-scss-lint": "^0.2.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^4.1.0",
     "jspm": "^0.16.19",
     "karma": "^0.12.36",
@@ -85,8 +88,7 @@
     "mocha": "^2.2.5",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.0",
-    "sassdoc": "^2.1.15",
-    "gulp-util": "^3.0.7"
+    "sassdoc": "^2.1.15"
   },
   "jspm": {
     "directories": {

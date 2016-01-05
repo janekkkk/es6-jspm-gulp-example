@@ -6,11 +6,13 @@
   <link rel="stylesheet" href="css/app.css" charset="utf-8">
 </head>
 <body>
-<h1>Hello JSPM! This is the second page.html</h1>
-<a href="index.html">index page</a>
+<?php
+echo '<h1>Hello JSPM! This is index.php</h1>';
+?>
+<a href="secondpage.php">second page</a>
 <script src="lib/system.js"></script>
 <script src="config.js"></script>
-<script>System.import( './js/secondapp' )</script>
-<script>console.log( "test2" );</script>
+<script>System.import( './js/app' )</script>
+<script>console.log( "test" );</script>
 </body>
 </html>

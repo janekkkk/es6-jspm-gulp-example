@@ -14,10 +14,15 @@
 var gulp = require('gulp');
 var requireDir = require('require-dir');
 
+// Choose Node or PHP server.
+global.node = true;
+
 // Specify paths & globbing patterns for tasks.
 global.paths = {
   // HTML sources.
   'html': './src/*.html',
+  // PHP sources.
+  'php': './src/*.php',
   // JS sources.
   'js': './src/js/**/*.js',
   'jsDep': './src/js/dep/**/*',
@@ -37,4 +42,10 @@ global.paths = {
 requireDir('./gulp', { recurse: false });
 
 // Default task; start local server & watch for changes.
-gulp.task('default', ['connect', 'watch']);
+if(global.node){
+  gulp.task('default', ['connect-node', 'watch']);
+}
+else{
+  gulp.task('default', ['connect-php', 'watch']);
+}
+

@@ -1,20 +1,20 @@
 window.esdocSearchIndex = [
   [
-    "es6-jspm-gulp-boilerplate/js/dep/_foo.js~foo",
+    "es6-jspm-gulp-example/js/dep/_foo.js~foo",
     "class/js/dep/_foo.js~Foo.html",
-    "<span>Foo</span> <span class=\"search-result-import-path\">es6-jspm-gulp-boilerplate/js/dep/_foo.js</span>",
+    "<span>Foo</span> <span class=\"search-result-import-path\">es6-jspm-gulp-example/js/dep/_foo.js</span>",
     "class"
   ],
   [
-    "es6-jspm-gulp-boilerplate/js/dep/_foo.js~foo",
+    "es6-jspm-gulp-example/js/dep/_foo.js~foo",
     "variable/index.html#static-variable-foo",
-    "<span>foo</span> <span class=\"search-result-import-path\">es6-jspm-gulp-boilerplate/js/dep/_foo.js</span>",
+    "<span>foo</span> <span class=\"search-result-import-path\">es6-jspm-gulp-example/js/dep/_foo.js</span>",
     "variable"
   ],
   [
-    "es6-jspm-gulp-boilerplate/js/app.js~hello",
+    "es6-jspm-gulp-example/js/app.js~hello",
     "variable/index.html#static-variable-hello",
-    "<span>hello</span> <span class=\"search-result-import-path\">es6-jspm-gulp-boilerplate/js/app.js</span>",
+    "<span>hello</span> <span class=\"search-result-import-path\">es6-jspm-gulp-example/js/app.js</span>",
     "variable"
   ],
   [

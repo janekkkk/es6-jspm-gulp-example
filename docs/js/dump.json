@@ -9,7 +9,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import Foo from './dep/_foo';\n\nlet foo = new Foo();\n\nlet textNode = document.createTextNode(foo.doSomething());\ndocument.body.appendChild(textNode);\n\nconsole.log('default app - ES6 loading style');\n\nexport var hello = 'es6';\n"
+    "content": "import Foo from './dep/_foo';\n\nlet foo = new Foo();\n\nlet textNode = document.createTextNode( foo.doSomething() );\ndocument.body.appendChild( textNode );\n\nconsole.log( 'default app - ES6 loading style' );\n\nexport var hello = 'es6';\n"
   },
   {
     "kind": "variable",
@@ -20,7 +20,7 @@
     "longname": "js/app.js~foo",
     "access": null,
     "export": false,
-    "importPath": "es6-jspm-gulp-boilerplate/js/app.js",
+    "importPath": "es6-jspm-gulp-example/js/app.js",
     "importStyle": null,
     "description": null,
     "lineNumber": 3,
@@ -40,7 +40,7 @@
     "longname": "js/app.js~textNode",
     "access": null,
     "export": false,
-    "importPath": "es6-jspm-gulp-boilerplate/js/app.js",
+    "importPath": "es6-jspm-gulp-example/js/app.js",
     "importStyle": null,
     "description": null,
     "lineNumber": 5,
@@ -60,7 +60,7 @@
     "longname": "js/app.js~hello",
     "access": null,
     "export": true,
-    "importPath": "es6-jspm-gulp-boilerplate/js/app.js",
+    "importPath": "es6-jspm-gulp-example/js/app.js",
     "importStyle": "{hello}",
     "description": null,
     "lineNumber": 10,
@@ -92,7 +92,7 @@
     "longname": "js/dep/_foo.js~Foo",
     "access": null,
     "export": true,
-    "importPath": "es6-jspm-gulp-boilerplate/js/dep/_foo.js",
+    "importPath": "es6-jspm-gulp-example/js/dep/_foo.js",
     "importStyle": "Foo",
     "description": null,
     "lineNumber": 1,
@@ -127,7 +127,7 @@
     "longname": "js/dep/_foo.js~foo",
     "access": null,
     "export": true,
-    "importPath": "es6-jspm-gulp-boilerplate/js/dep/_foo.js",
+    "importPath": "es6-jspm-gulp-example/js/dep/_foo.js",
     "importStyle": "foo",
     "description": null,
     "lineNumber": 8,
@@ -148,7 +148,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "var $ = require('jquery');\nvar _ = require('lodash');\n\nconsole.log('second app - CommonJS loading style');\nconsole.log($.fn.jquery);\nconsole.log(_.VERSION);\n"
+    "content": "var $ = require( 'jquery' );\nvar _ = require( 'lodash' );\n\nvar textNode = document.createTextNode( 'Do Something' );\ndocument.body.appendChild( textNode );\n\nconsole.log( 'second app - CommonJS loading style' );\nconsole.log( $.fn.jquery );\nconsole.log( _.VERSION );\n"
   },
   {
     "kind": "variable",
@@ -159,7 +159,7 @@
     "longname": "js/secondapp.js~$",
     "access": null,
     "export": false,
-    "importPath": "es6-jspm-gulp-boilerplate/js/secondapp.js",
+    "importPath": "es6-jspm-gulp-example/js/secondapp.js",
     "importStyle": null,
     "description": null,
     "lineNumber": 1,
@@ -179,10 +179,30 @@
     "longname": "js/secondapp.js~_",
     "access": null,
     "export": false,
-    "importPath": "es6-jspm-gulp-boilerplate/js/secondapp.js",
+    "importPath": "es6-jspm-gulp-example/js/secondapp.js",
     "importStyle": null,
     "description": null,
     "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "textNode",
+    "memberof": "js/secondapp.js",
+    "longname": "js/secondapp.js~textNode",
+    "access": null,
+    "export": false,
+    "importPath": "es6-jspm-gulp-example/js/secondapp.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
     "undocument": true,
     "type": {
       "types": [
