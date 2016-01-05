@@ -23,7 +23,7 @@
   "readmeFilename": "README.md",
   "license": "Unlicense",
   "scripts": {
-    "preinstall": "npm install -g jspm gulp",
+    "preinstall": "npm install -g npm jspm gulp",
     "install": "jspm install",
     "test": "karma start",
     "test:watch": "karma start --no-single-run",
