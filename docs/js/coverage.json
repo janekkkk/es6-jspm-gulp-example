@@ -1,0 +1,23 @@
+{
+  "coverage": "0%",
+  "expectCount": 4,
+  "actualCount": 0,
+  "files": {
+    "js/dep/_foo.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        3,
+        8
+      ]
+    },
+    "js/app.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        10
+      ]
+    }
+  }
+}
