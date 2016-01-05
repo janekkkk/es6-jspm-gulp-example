@@ -21,7 +21,7 @@ var glob = require( 'glob' );
 // One build task to rule them all.
 gulp.task( 'build', function( done )
 {
-  runSeq( 'clean', [ 'buildsass', 'buildimg', 'buildjs' ], 'buildhtml', done );
+  runSeq( 'clean', [ 'buildsass', 'buildimg', 'buildjs' ], ['buildhtml', 'buildphp'], done );
 } );
 
 // Build SASS for distribution.
@@ -61,6 +61,17 @@ gulp.task( 'buildhtml', function()
     .pipe( replace( '<script src="config.js"></script>', '' ) )
     .pipe( replace( "<script>System.import('./js/app')</script>", '' ) )
     .pipe( minifyHtml() )
+    .pipe( gulp.dest( global.paths.dist ) );
+} );
+
+// Build PHP for distribution.
+gulp.task( 'buildphp', function()
+{
+  gulp.src( global.paths.php )
+    .pipe( replace( 'css/app.css', 'app.min.css' ) )
+    .pipe( replace( 'lib/system.js', 'app.min.js' ) )
+    .pipe( replace( '<script src="config.js"></script>', '' ) )
+    .pipe( replace( "<script>System.import('./js/app')</script>", '' ) )
     .pipe( gulp.dest( global.paths.dist ) );
 } );
 
