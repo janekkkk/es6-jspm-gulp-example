@@ -10,11 +10,11 @@ gulp.task( 'html', function()
 {
   if( global.node )
   {
-    gulp.src( [ global.paths.html, global.paths.php ] )
+    gulp.src( [ global.paths.html ] )
       .pipe( connect.reload() );
   }
   else{
-    gulp.src( [ global.paths.html, global.paths.php ] );
+    gulp.src( [ global.paths.php ] );
       reload();
   }
 } );

@@ -17,6 +17,7 @@ var sass = require( 'gulp-sass' );
 var uglify = require( 'gulp-uglify' );
 
 var glob = require( 'glob' );
+var fileManipulator = require( "./fileManipulator.js");
 
 // One build task to rule them all.
 gulp.task( 'build', function( done )
@@ -41,12 +42,11 @@ gulp.task( 'buildsass', function()
 // Build JS for distribution.
 gulp.task( 'buildjs', function()
 {
+  var entrypoints = glob.sync( 'src/js/*.js' );
 
-  var componentsFolders = glob.sync( 'src/js/*.js' );
-
-  componentsFolders.forEach( function( path )
+  entrypoints.forEach( function( path )
                              {
-                               var file = getFilenameFromPath( path );
+                               var file = fileManipulator.getFilenameFromPath( path );
                                gutil.log( "Building: " + path );
                                exec( 'jspm bundle-sf1x js/' + file + ' dist/' + file + '.min.js --minify --skip-source-maps' );
                              } );
@@ -55,6 +55,15 @@ gulp.task( 'buildjs', function()
 // Build HTML for distribution.
 gulp.task( 'buildhtml', function()
 {
+  var entrypoints = glob.sync( 'src/js/*.js' );
+  var files = [];
+  entrypoints.forEach( function( path ){
+    files.push( fileManipulator.getFilenameFromPath( path));
+  });
+  /* TODO search for all files in the js root dir and remove the system.import lines
+   1. Find all the scripts loaded in with System.import on the page
+   2. Replace all the System.import lines with script tags to the minified JS verions
+   */
   gulp.src( global.paths.html )
     .pipe( replace( 'css/app.css', 'app.min.css' ) )
     .pipe( replace( 'lib/system.js', 'app.min.js' ) )
@@ -87,13 +96,4 @@ gulp.task( 'buildimg', function()
     .pipe( gulp.dest( global.paths.dist + '/img' ) );
 } );
 
-// Remove path and extension leaving only the file name.
-function getFilenameFromPath( file )
-{
-  var index = file.lastIndexOf( '/' );
-  if( index != -1 )
-  {
-    file = file.substring( index + 1 ).split( '.js' ).join( '' );
-  }
-  return file;
-}
+
