@@ -1,4 +1,3 @@
-[![Dependency Status](https://david-dm.org/alexweber/es6-jspm-gulp-boilerplate.svg)](https://david-dm.org/alexweber/es6-jspm-gulp-boilerplate) [![devDependency Status](https://david-dm.org/alexweber/es6-jspm-gulp-boilerplate/dev-status.svg)](https://david-dm.org/alexweber/es6-jspm-gulp-boilerplate#info=devDependencies)
 # ES6 + JSPM + Gulp Boilerplate
 
 > A boilerplate for developing ES6+ apps using JSPM & Gulp.
@@ -22,7 +21,7 @@
 
 ## Usage
 
-1. Clone this repo from `https://github.com/janekkkk/es6-jspm-gulp-boilerplate.git`
+1. Clone this repo from `https://github.com/janekkkk/es6-jspm-gulp-example.git`
 2. Run `npm install` in the root directory
 3. Run `gulp` or `npm start` to start the local dev server
 4. Write an awesome app! ☺
@@ -43,7 +42,7 @@ Run `gulp build` or `npm run build` to build the app for distribution in the `di
 
 ## Contributing
 
-If you like this/find it useful/find a bug please open an [issue](https://github.com/janekkkk/es6-jspm-gulp-boilerplate/issues) and, better yet, submit a Pull Request! ☺ Any and all help appreciated, thanks!
+If you like this/find it useful/find a bug please open an [issue](https://github.com/janekkkk/es6-jspm-gulp-example/issues) and, better yet, submit a Pull Request! ☺ Any and all help appreciated, thanks!
 
 ---
 
