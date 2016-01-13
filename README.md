@@ -19,7 +19,7 @@
 - Testing using [Karma](http://karma-runner.github.io/) with [Mocha](http://mochajs.org/) + [Chai](http://chaijs.com/) (bonus: write your tests in ES6)
 - Linting with [ESLint](http://eslint.org/) and [SCSS-Lint](https://github.com/brigade/scss-lint)
 - Generates documentation automatically using [ESDoc](https://esdoc.org/) and [SassDoc](http://sassdoc.com/)
-- Building Javascript from multiple entrypoints
+- Building Javascript from multiple entry points
 - [Unlicensed](http://unlicense.org/)
 
 ## Usage
