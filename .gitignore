@@ -7,3 +7,9 @@ src/lib/
 
 # Compiled css.
 src/css/
+
+# IDE files.
+.idea/*
+
+# Build files
+dist/**/*

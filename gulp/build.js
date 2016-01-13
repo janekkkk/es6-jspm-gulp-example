@@ -17,12 +17,15 @@ var sass = require( 'gulp-sass' );
 var uglify = require( 'gulp-uglify' );
 
 var glob = require( 'glob' );
-var fileManipulator = require( "./fileManipulator.js");
+var intercept = require( 'gulp-intercept' );
+var change = require( 'gulp-change' );
+
+var stringManipulator = require( "./fileManipulator.js" );
 
 // One build task to rule them all.
 gulp.task( 'build', function( done )
 {
-  runSeq( 'clean', [ 'buildsass', 'buildimg', 'buildjs' ], ['buildhtml', 'buildphp'], done );
+  runSeq( 'clean', [ 'buildsass', 'buildimg', 'buildjs' ], 'buildhtml', done );
 } );
 
 // Build SASS for distribution.
@@ -45,42 +48,35 @@ gulp.task( 'buildjs', function()
   var entrypoints = glob.sync( 'src/js/*.js' );
 
   entrypoints.forEach( function( path )
-                             {
-                               var file = fileManipulator.getFilenameFromPath( path );
-                               gutil.log( "Building: " + path );
-                               exec( 'jspm bundle-sf1x js/' + file + ' dist/' + file + '.min.js --minify --skip-source-maps' );
-                             } );
+                       {
+                         var file = stringManipulator.getFilenameFromPath( path );
+                         gutil.log( "Building: " + path );
+                         exec(
+                           'jspm bundle-sfx ' + __dirname + '/../src/js/' + file + ' ' + __dirname + '/../dist/' + file + '.min.js --minify --skip-source-maps' );
+                       } );
 } );
 
-// Build HTML for distribution.
+/*
+ Build HTML for distribution.
+ Find all the scripts loaded in with System.import on the page
+ Replace all the System.import lines with script tags to the minified JS verions */
 gulp.task( 'buildhtml', function()
 {
-  var entrypoints = glob.sync( 'src/js/*.js' );
-  var files = [];
-  entrypoints.forEach( function( path ){
-    files.push( fileManipulator.getFilenameFromPath( path));
-  });
-  /* TODO search for all files in the js root dir and remove the system.import lines
-   1. Find all the scripts loaded in with System.import on the page
-   2. Replace all the System.import lines with script tags to the minified JS verions
-   */
-  gulp.src( global.paths.html )
-    .pipe( replace( 'css/app.css', 'app.min.css' ) )
-    .pipe( replace( 'lib/system.js', 'app.min.js' ) )
-    .pipe( replace( '<script src="config.js"></script>', '' ) )
-    .pipe( replace( "<script>System.import('./js/app')</script>", '' ) )
-    .pipe( minifyHtml() )
-    .pipe( gulp.dest( global.paths.dist ) );
-} );
+  function replaceScripttags( content )
+  {
+    var script = stringManipulator.getStringBetweenTwoStrings( content, '<script>System.import( ', ')</script>', 6, 2 );
+    var line = stringManipulator.getStringBetweenTwoStrings( content, '<!-- build:javascript -->', '<!-- endbuild -->', 0, 1 );
+    return content.replace( line, '\n' + '<script defer src="dist/' + script + '.min.js"></script' );
+  }
 
-// Build PHP for distribution.
-gulp.task( 'buildphp', function()
-{
-  gulp.src( global.paths.php )
+  gulp.src( [global.paths.html, global.paths.php] )
     .pipe( replace( 'css/app.css', 'app.min.css' ) )
-    .pipe( replace( 'lib/system.js', 'app.min.js' ) )
+    .pipe( change( replaceScripttags ) )
+    .pipe( replace( '<script src="lib/system.js"></script>', '' ) )
     .pipe( replace( '<script src="config.js"></script>', '' ) )
-    .pipe( replace( "<script>System.import('./js/app')</script>", '' ) )
+    .pipe( replace( '<!-- build:javascript -->', '' ) )
+    .pipe( replace( '<!-- endbuild -->', '' ) )
+    .pipe( minifyHtml() )
     .pipe( gulp.dest( global.paths.dist ) );
 } );
 
@@ -95,5 +91,3 @@ gulp.task( 'buildimg', function()
                      } ) )
     .pipe( gulp.dest( global.paths.dist + '/img' ) );
 } );
-
-

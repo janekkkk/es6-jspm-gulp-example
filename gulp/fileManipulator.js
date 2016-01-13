@@ -9,3 +9,13 @@ exports.getFilenameFromPath = function( file )
   }
   return file;
 };
+
+exports.getStringBetweenTwoStrings = function(content, start, end, offsetStart, offsetEnd){
+  offsetStart = typeof offsetStart !== 'undefined' ? offsetStart : 0;
+  offsetEnd = typeof offsetEnd !== 'undefined' ? offsetEnd : 0;
+  return content.substring(content.indexOf(start) + start.length + offsetStart, content.indexOf(end) - offsetEnd);
+};
+
+exports.replaceAll = function(str, find, replace) {
+  return str.replace(new RegExp(find, 'g'), replace);
+}

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<script defer src=dist/secondapp.min.js></scriptng="en">
 <head>
   <meta charset="UTF-8">
   <title>ES6 + JSPM + Gulp</title>
@@ -10,9 +9,6 @@
 echo '<h1>Hello JSPM! This is the second page.php</h1>';
 ?>
 <a href="index.php">index page</a>
-<script src="app.min.js"></script>
 
-<script>System.import( './js/secondapp' )</script>
-<script>console.log( "test2" );</script>
-</body>
-</html>
+
+<script>System.import( './js/secondapp' )</script><script>console.log( "test2" );</script>
