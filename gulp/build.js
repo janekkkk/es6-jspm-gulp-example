@@ -54,8 +54,8 @@ gulp.task('buildjs', function () {
 
 /*
  Build HTML for distribution.
- Find all the scripts loaded in with System.import on the page
- Replace all the System.import lines with script tags to the minified JS verions */
+ Find all the scripts loaded in with System.import on the page.
+ Replace all the System.import lines with script tags to the minified JS verions. */
 gulp.task('buildhtml', function () {
   function replaceScripttags(content) {
     var script = stringManipulator.getStringBetweenTwoStrings(content, '<script>System.import( ', ')</script>', 6, 2);

@@ -4,6 +4,8 @@ gulp/
 src/config.js
 src/lib/
 .esdoc.json
+.jshintrc
 gulpfile.js
 karma.conf.js
 package.json
+composer.json
