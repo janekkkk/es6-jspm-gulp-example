@@ -19,6 +19,7 @@ global.node = true;
 
 // Specify paths & globbing patterns for tasks.
 global.paths = {
+
   // HTML sources.
   'html': './src/*.html',
   // PHP sources.

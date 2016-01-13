@@ -1,8 +1,8 @@
-(function(){
+(function () {
   function toggle(ev) {
     var button = ev.target;
     var parent = ev.target.parentElement;
-    while(parent) {
+    while (parent) {
       if (parent.tagName === 'TR' && parent.classList.contains('test-describe')) break;
       parent = parent.parentElement;
     }

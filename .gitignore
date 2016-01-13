@@ -12,4 +12,4 @@ src/css/
 .idea/*
 
 # Build files
-dist/**/*
+# dist/**/*

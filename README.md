@@ -1,13 +1,13 @@
-# ES6 + JSPM + Gulp Boilerplate
+# JSPM + Gulp example/boilerplate
 
-> A boilerplate for developing ES6+ apps using JSPM & Gulp.
+> A boilerplate for developing apps using JSPM & Gulp.
 > Some changes were made to the original repository to match my workflow.
 
 ## JSPM
 
 [JSPM](http://jspm.io/) is an all-in-one command line tool for package management, module loading and transpilation. Read more about it [here](http://www.joezimjs.com/javascript/simplifying-the-es6-workflow-with-jspm/) and [here](http://javascriptplayground.com/blog/2014/11/js-modules-jspm-systemjs/).
 
-## Boilerplate Features
+## Features
 
 - Uses JSPM instead of Bower to manage packages
 - Transpiles ES6+ automagically using [Babel](https://babeljs.io/) via JSPM
@@ -19,6 +19,7 @@
 - Testing using [Karma](http://karma-runner.github.io/) with [Mocha](http://mochajs.org/) + [Chai](http://chaijs.com/) (bonus: write your tests in ES6)
 - Linting with [ESLint](http://eslint.org/) and [SCSS-Lint](https://github.com/brigade/scss-lint)
 - Generates documentation automatically using [ESDoc](https://esdoc.org/) and [SassDoc](http://sassdoc.com/)
+- Building Javascript from multiple entrypoints
 - [Unlicensed](http://unlicense.org/)
 
 ## Usage
