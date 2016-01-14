@@ -5,7 +5,7 @@
 
 ## JSPM
 
-[JSPM](http://jspm.io/) is an all-in-one command line tool for package management, module loading and transpilation. Read more about it [here](http://www.joezimjs.com/javascript/simplifying-the-es6-workflow-with-jspm/) and [here](http://javascriptplayground.com/blog/2014/11/js-modules-jspm-systemjs/).
+[JSPM](http://jspm.io/) is an all-in-one command line tool for package management, module loading and transpilation. Read more about it [here](http://ilikekillnerds.com/2015/07/jspm-vs-webpack/) and [here](http://javascriptplayground.com/blog/2014/11/js-modules-jspm-systemjs/).
 
 ## Features
 
@@ -47,4 +47,4 @@ Run `gulp build` or `npm run build` to build the app for distribution in the `di
 
 ---
 
-[No rights reserved](http://unlicense.org/). Made with ♥ by [Alex Weber](https://twitter.com/alexweber15) modified by [Janek Ozga](http://www.janekozga.nl/)
+[No rights reserved](http://unlicense.org/). Made with ♥ by [Alex Weber](https://twitter.com/alexweber15) heavily modified by [Janek Ozga](http://www.janekozga.nl/)
