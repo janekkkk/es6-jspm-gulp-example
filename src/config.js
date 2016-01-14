@@ -15,9 +15,10 @@ System.config({
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
-    "jquery": "npm:jquery@2.1.4",
+    "jquery": "npm:jquery@2.2.0",
     "lodash": "npm:lodash@3.10.1",
     "pixi.js": "npm:pixi.js@3.0.6",
+    "zepto": "npm:zepto@1.0.1",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -261,6 +262,9 @@ System.config({
     },
     "npm:xtend@2.1.2": {
       "object-keys": "npm:object-keys@0.4.0"
+    },
+    "npm:zepto@1.0.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }
 });

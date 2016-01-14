@@ -20,5 +20,5 @@ gulp.task('lintsass', function () {
     .pipe(scsslint());
 });
 
-// Lint all the things!
+// Lint all teh things!
 gulp.task('lint', ['lintjs', 'lintsass']);

@@ -8,33 +8,28 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var gulpif = require('gulp-if');
 
 var sassOptions = {
   errLogToConsole: true,
   outputStyle: 'expanded'
 };
 
+// TODO Add Ruby Sass support https://github.com/sindresorhus/gulp-ruby-sass
+
 // Compile SASS with sourcemaps + livereload.
 gulp.task('sass', function () {
 
-  if (global.node) {
-    gulp.src(global.paths.sass)
-      .pipe(sourcemaps.init())
-      .pipe(sass(sassOptions).on('error', sass.logError))
-      .pipe(concat('app.css'))
-      .pipe(autoprefixer())
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(global.paths.css))
-      .pipe(connect.reload());
-  }
-  else {
-    gulp.src(global.paths.sass)
-      .pipe(sourcemaps.init())
-      .pipe(sass(sassOptions).on('error', sass.logError))
-      .pipe(concat('app.css'))
-      .pipe(autoprefixer())
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(global.paths.css));
+  gulp.src(global.paths.sass)
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(concat('app.css'))
+    .pipe(autoprefixer())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulpif(global.node, connect.reload()))
+    .pipe(gulp.dest(global.paths.css));
+  if (!global.node) {
     reload();
   }
+
 });
