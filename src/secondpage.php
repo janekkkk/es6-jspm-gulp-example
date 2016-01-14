@@ -12,7 +12,8 @@ echo '<h1>Hello JSPM! This is the second page.php</h1>';
 <a href="index.php">index page</a>
 <script src="lib/system.js"></script>
 <script src="config.js"></script>
-<script>System.import( './js/secondapp' )</script>
-<script>console.log( "test2" );</script>
+<!-- build:javascript -->
+<script>System.import('./js/secondapp')</script>
+<!-- endbuild -->
 </body>
 </html>

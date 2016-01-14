@@ -20,7 +20,7 @@ var glob = require('glob');
 var intercept = require('gulp-intercept');
 var change = require('gulp-change');
 
-var stringManipulator = require('./fileManipulator.js');
+var stringManipulator = require('./stringManipulator.js');
 
 // One build task to rule them all.
 gulp.task('build', function (done) {
@@ -47,8 +47,10 @@ gulp.task('buildjs', function () {
   entrypoints.forEach(function (path) {
     var file = stringManipulator.getFilenameFromPath(path);
     gutil.log('Building: ' + path);
+    var source = __dirname + '/../src/js/' + file;
+    var destination = __dirname + '/../dist/' + file;
     exec(
-      'jspm bundle-sfx ' + __dirname + '/../src/js/' + file + ' ' + __dirname + '/../dist/' + file + '.min.js --minify --skip-source-maps');
+      'jspm bundle-sfx ' + source + ' ' + destination + '.min.js --minify --skip-source-maps');
   });
 });
 
@@ -58,16 +60,17 @@ gulp.task('buildjs', function () {
  Replace all the System.import lines with script tags to the minified JS verions. */
 gulp.task('buildhtml', function () {
   function replaceScripttags(content) {
-    var script = stringManipulator.getStringBetweenTwoStrings(content, '<script>System.import( ', ')</script>', 6, 2);
     var line = stringManipulator.getStringBetweenTwoStrings(content, '<!-- build:javascript -->', '<!-- endbuild -->', 0, 1);
-    return content.replace(line, '\n' + '<script defer src="dist/' + script + '.min.js"></script');
+    var script = stringManipulator.getStringBetweenTwoStrings(line, '<script>System.import( ', ')</script>', 7, 1);
+    return content.replace(line, '<script defer src="'+ script + '.min.js"></script>');
   }
 
-  gulp.src([global.paths.html, global.paths.php])
+  //TODO Add php source
+  gulp.src(global.paths.html)
     .pipe(replace('css/app.css', 'app.min.css'))
-    .pipe(change(replaceScripttags))
     .pipe(replace('<script src="lib/system.js"></script>', ''))
     .pipe(replace('<script src="config.js"></script>', ''))
+    .pipe(change(replaceScripttags))
     .pipe(replace('<!-- build:javascript -->', ''))
     .pipe(replace('<!-- endbuild -->', ''))
     .pipe(minifyHtml())

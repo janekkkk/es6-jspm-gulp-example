@@ -20,6 +20,7 @@
 - Linting with [ESLint](http://eslint.org/) and [SCSS-Lint](https://github.com/brigade/scss-lint)
 - Generates documentation automatically using [ESDoc](https://esdoc.org/) and [SassDoc](http://sassdoc.com/)
 - Building Javascript from multiple entry points
+- Code style and linters from [Airbnb](https://github.com/airbnb/javascript) 
 - [Unlicensed](http://unlicense.org/)
 
 ## Usage
