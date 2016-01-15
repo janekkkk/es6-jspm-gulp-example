@@ -38,7 +38,7 @@ global.paths = {
   // Distribution folder.
   'dist': './dist',
   // Tests folder.
-  'test': './test'
+  'test': './test/jasmine'
 };
 
 // Require all tasks in the 'gulp' folder.

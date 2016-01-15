@@ -1,6 +1,7 @@
-@import 'foo';
 @import 'src/lib/github/twbs/bootstrap-sass@3.3.6/assets/stylesheets/bootstrap';
+@import 'foo';
 
 body {
   background-color: #fff;
+  padding-top: 10%;
 }

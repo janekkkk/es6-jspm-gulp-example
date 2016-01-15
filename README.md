@@ -16,7 +16,7 @@
 - Choice between Node or PHP  
     - Local Node dev server with [LiveReload](http://livereload.com/) using [Gulp Connect](https://github.com/avevlad/gulp-connect)
     - Local PHP dev server with [Browsersync](https://www.browsersync.io/) using [Gulp Connect PHP](https://www.npmjs.com/package/gulp-connect-php)
-- Testing using [Karma](http://karma-runner.github.io/) with [Mocha](http://mochajs.org/) + [Chai](http://chaijs.com/) (bonus: write your tests in ES6)
+- Testing using [Jasmine](http://jasmine.github.io) or [Karma](http://karma-runner.github.io/) with  [Mocha](http://mochajs.org/) + [Chai](http://chaijs.com/) (bonus: write your tests in ES6)
 - Linting with [ESLint](http://eslint.org/) and [SCSS-Lint](https://github.com/brigade/scss-lint)
 - Generates documentation automatically using [ESDoc](https://esdoc.org/) and [SassDoc](http://sassdoc.com/)
 - Building Javascript from multiple entry points
@@ -32,6 +32,12 @@
 
 ## Testing
 
+### Jasmine
+Run `gulp test` or `npm run gulp-test` to run tests once.
+
+Run `gulp test:watch` or `npm run gulp-test:watch` to run tests continuously.
+
+### Mocha
 Run `karma start` or `npm test` to run tests once.
 
 Run `npm run test:watch` to run tests continuously.
