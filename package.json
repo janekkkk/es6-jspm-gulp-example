@@ -106,6 +106,8 @@
       "test": "test"
     },
     "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@^3.3.6",
+      "bootstrap-sass": "github:twbs/bootstrap-sass@^3.3.6",
       "jquery": "npm:jquery@^2.2.0",
       "lodash": "npm:lodash@^3.10.1",
       "zepto": "npm:zepto@^1.0.1"

@@ -1,5 +1,5 @@
 import Foo from './dep/_foo';
-
+import bootstrap from 'bootstrap';
 let foo = new Foo();
 
 let textNode = document.createTextNode(foo.doSomething());

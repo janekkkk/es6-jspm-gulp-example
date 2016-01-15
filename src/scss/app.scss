@@ -1,5 +1,6 @@
-@import "foo";
+@import 'foo';
+@import 'src/lib/github/twbs/bootstrap-sass@3.3.6/assets/stylesheets/bootstrap';
 
 body {
-  background-color: cornsilk;
+  background-color: #fff;
 }
