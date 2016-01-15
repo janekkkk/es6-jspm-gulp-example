@@ -1,9 +1,8 @@
 var _ = require('lodash');
-require ('bootstrap')
+require ('bootstrap');
 var dep = require('./dep/_dep1');
 
-var textNode = document.createTextNode('Do Something');
-document.body.appendChild(textNode);
+$('body').append('Do Something');
 
 console.log('second app - CommonJS loading style');
 console.log($.fn.jquery);
