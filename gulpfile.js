@@ -36,7 +36,9 @@ global.paths = {
   // Compiled CSS folder.
   'css': './src/css',
   // Distribution folder.
-  'dist': './dist'
+  'dist': './dist',
+  // Tests folder.
+  'test': './test'
 };
 
 // Require all tasks in the 'gulp' folder.
