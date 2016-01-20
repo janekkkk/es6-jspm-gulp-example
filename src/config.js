@@ -12,6 +12,7 @@ System.config({
   },
 
   map: {
+    "autosuggest": "npm:autosuggest@0.0.2",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
@@ -20,7 +21,9 @@ System.config({
     "jquery": "npm:jquery@2.2.0",
     "lodash": "npm:lodash@3.10.1",
     "pixi.js": "npm:pixi.js@3.0.6",
-    "zepto": "npm:zepto@1.0.1",
+    "rangeslider": "npm:rangeslider@1.0.0",
+    "typeahead": "github:twitter/typeahead.js@0.11.1",
+    "zepto": "npm:zepto@1.0.1/zepto.min",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -54,6 +57,9 @@ System.config({
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "github:components/jquery@2.2.0"
     },
+    "github:twitter/typeahead.js@0.11.1": {
+      "jquery": "npm:jquery@2.2.0"
+    },
     "npm:acorn@1.2.2": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
@@ -72,6 +78,11 @@ System.config({
     "npm:async@0.9.2": {
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:autosuggest@0.0.2": {
+      "bind-component": "npm:bind-component@0.0.1",
+      "event-component": "npm:event-component@0.1.0",
+      "find": "github:component/find@1.0.0"
     },
     "npm:babel-runtime@5.8.34": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -267,9 +278,6 @@ System.config({
     },
     "npm:xtend@2.1.2": {
       "object-keys": "npm:object-keys@0.4.0"
-    },
-    "npm:zepto@1.0.1": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }
 });

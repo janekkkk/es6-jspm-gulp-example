@@ -107,9 +107,12 @@
       "test": "test"
     },
     "dependencies": {
+      "autosuggest": "npm:autosuggest@^0.0.2",
       "bootstrap-sass": "github:twbs/bootstrap-sass@^3.3.6",
       "jquery": "npm:jquery@^2.2.0",
       "lodash": "npm:lodash@^3.10.1",
+      "rangeslider": "npm:rangeslider@^1.0.0",
+      "typeahead": "github:twitter/typeahead.js@^0.11.1",
       "zepto": "npm:zepto@^1.0.1"
     },
     "devDependencies": {
