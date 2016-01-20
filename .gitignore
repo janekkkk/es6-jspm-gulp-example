@@ -13,3 +13,6 @@ src/css/
 
 # Build files
 dist/**/*
+
+# Composer files
+vendor/**/*

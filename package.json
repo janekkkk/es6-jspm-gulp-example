@@ -1,7 +1,9 @@
 {
   "name": "es6-jspm-gulp-example",
   "version": "0.3.1",
-  "engines":{"node": "5.*"},
+  "engines": {
+    "node": "5.*"
+  },
   "description": "Boilerplate for ES6+ apps using JSPM + Babel",
   "main": "dist/index.html",
   "homepage": "https://github.com/janekkkk/es6-jspm-gulp-example#readme",
@@ -24,8 +26,7 @@
   "readmeFilename": "README.md",
   "license": "Unlicense",
   "scripts": {
-    "preinstall": "npm install -g npm jspm gulp browser-sync",
-    "prepublish": "gulp build",
+    "preinstall": "npm install -g jspm gulp browser-sync",
     "install": "jspm install && composer install",
     "gulp-test": "gulp test",
     "gulp-test:watch": "gulp test:watch",
