@@ -1,6 +1,7 @@
 {
   "name": "es6-jspm-gulp-example",
   "version": "0.3.1",
+  "engines":{"node": "5.*"},
   "description": "Boilerplate for ES6+ apps using JSPM + Babel",
   "main": "dist/index.html",
   "homepage": "https://github.com/janekkkk/es6-jspm-gulp-example#readme",
@@ -61,6 +62,7 @@
     "eslint-config-standard": "^4.1.0",
     "eslint-plugin-react": "^3.15.0",
     "eslint-plugin-standard": "^1.2.0",
+    "glob": "^6.0.4",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-cached": "^1.1.0",
