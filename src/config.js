@@ -23,7 +23,6 @@ System.config({
     "pixi.js": "npm:pixi.js@3.0.6",
     "rangeslider": "npm:rangeslider@1.0.0",
     "typeahead": "github:twitter/typeahead.js@0.11.1",
-    "zepto": "npm:zepto@1.0.1/zepto.min",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
