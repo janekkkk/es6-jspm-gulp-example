@@ -1,5 +1,5 @@
 var _ = require('lodash');
-require ('bootstrap');
+require ('bootstrap-sass');
 var dep = require('./dep/_dep1');
 $('body').append('Do Something');
 
